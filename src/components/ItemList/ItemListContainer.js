@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import { getProducts } from '../../utils/products';
+import { getAllProducts, getProductsByCategory } from '../../utils/products';
 import ItemList from './ItemList';
 import './ItemListContainer.css';
 
@@ -9,18 +9,21 @@ import './ItemListContainer.css';
 
 
 const ItemListContainer = ({ greeting }) => {
-    const { categoryName } = useParams();
+    const { categoryId } = useParams();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        console.log(categoryName);
-    }, [categoryName])
+        if (categoryId) {
+            getProductsByCategory(categoryId)
+                .then((data) => setProducts(data))
+                .catch((error) => console.warn(error))
+        } else {
+            getAllProducts()
+                .then((data) => setProducts(data))
+                .catch((error) => console.warn(error))
+        }
 
-    useEffect(() => {
-        getProducts()
-            .then((data) => setProducts(data))
-            .catch((error) => console.warn(error))
-    }, [])
+    }, [categoryId])
 
     return (
         <Container>
