@@ -21,6 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://andresdavidochoa.github.io/e-commerce-react-js",
   "eslintConfig": {
     "extends": [
       "react-app",

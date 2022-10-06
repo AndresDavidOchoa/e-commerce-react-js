@@ -10,7 +10,7 @@ import Checkout from './components/Checkout';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/e-commerce-react-js'>
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer greeting={'Bienvenidos a Gamerizate'} />}/>
