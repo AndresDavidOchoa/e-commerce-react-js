@@ -6,9 +6,22 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import Checkout from './components/Checkout';
+import { useEffect } from 'react';
+import { doc, getFirestore } from 'firebase/firestore';
 
 
 function App() {
+  // useEffect(() => {
+  //   const database = getFirestore();
+
+  //   const itemReference = doc(database, 'items', 'pXkmSN4b9m96JOQKvtUE');
+
+  //   const getDoc(itemReference)
+  //     .then((snapshot) => {
+
+  //     })
+  // })
+
   return (
     <BrowserRouter basename='/e-commerce-react-js'>
       <NavBar />

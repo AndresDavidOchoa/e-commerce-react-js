@@ -1,20 +1,40 @@
 import { useState } from "react";
 import Item from "../ItemList/Item";
+import ItemCount from "../ItemCount/ItemCount"
+import './ItemDetail.css'
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ product }) => {
     const [count, setCount] = useState(0);
+    const [showItemCount, setShowItemCount] = useState(true);
 
-    const handleClick = (value) => {
+    const handleAdd = (value) => {
         setCount(value);
+        setShowItemCount(false);
     };
 
     return (
-        <>
+        <div className="ItemDetailContainer">
             <Item product={product} />
-            <button onClick={() => handleClick(count - 1)}>-</button>
-            <h4>Cantidad de click {count}</h4>
-            <button onClick={() => handleClick(count + 1)}>+</button>
-        </>
+            {
+                showItemCount && (<ItemCount
+                    initial={1}
+                    stock={10}
+                    onAdd={handleAdd}
+                />
+                )
+            }
+            {
+                !showItemCount && (
+                    <Link to='/cart'>
+                        <Button variant="success">
+                            Ir al carrito
+                        </Button>
+                    </Link>
+                )
+            }
+        </div>
     );
 }
 
