@@ -26,7 +26,7 @@ const ItemListContainer = ({ greeting }) => {
     }, [categoryId])
 
     return (
-        <Container>
+        <Container className='shop-container'>
             <h3 className="greetings">{greeting}</h3>
             <ItemList products={products} />
 

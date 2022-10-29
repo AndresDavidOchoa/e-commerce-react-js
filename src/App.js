@@ -7,9 +7,14 @@ import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import Checkout from './components/Checkout';
 import { CartProvider } from './contexts/CartContext';
+// import { useEffect } from 'react';
+// import { createAllProducts } from './utils/products';
 
 
 function App() {
+  // useEffect(() => {
+  //   createAllProducts()
+  // }, []);
   return (
     <BrowserRouter basename='/e-commerce-react-js'>
       <CartProvider>
