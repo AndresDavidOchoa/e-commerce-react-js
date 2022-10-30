@@ -1,5 +1,9 @@
 # Gamerizate
 
+Link a la version actual de la pagina - [Gamerizate](https://andresdavidochoa.github.io/e-commerce-react-js/)
+
+Gamerizate es un e-commerce en el que puedes encontrar cualquier juego que quieras de cualquier plataforma.
+
 Este proyecto fue creado con:
 
  - CRA
