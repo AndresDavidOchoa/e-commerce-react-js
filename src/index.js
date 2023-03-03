@@ -1,25 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App'
 import reportWebVitals from './reportWebVitals';
 
- //Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-//TODO: Add SDKs for Firebase products that you want to use
-//https://firebase.google.com/docs/web/setup#available-libraries
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
- //Your web app's Firebase configuration
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDPpz3yLiSWuzur3iRK7g3Nh2UDttZ7wCQ",
-  authDomain: "gamerizate.firebaseapp.com",
-  projectId: "gamerizate",
-  storageBucket: "gamerizate.appspot.com",
-  messagingSenderId: "765938583054",
-  appId: "1:765938583054:web:16537a933aeb18c2cade5f"
+  apiKey: "AIzaSyBt8LxB53_6SxrzyoULe72HM1CcMPzsMJs",
+  authDomain: "gamerizate-2611d.firebaseapp.com",
+  projectId: "gamerizate-2611d",
+  storageBucket: "gamerizate-2611d.appspot.com",
+  messagingSenderId: "1060846239",
+  appId: "1:1060846239:web:61149cadc186e7894440aa"
 };
 
- //Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

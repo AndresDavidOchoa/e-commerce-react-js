@@ -1,7 +1,5 @@
 import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
 
-
-
 export const getAllProducts = () => {
     const database = getFirestore();
     const collectionReference = collection(database, 'items');
@@ -60,25 +58,33 @@ export const getProductsByCategory = (categoryId) => {
             return list;
         })
         .catch(error => console.warn(error))
+        
 };
 
 export const products = [
-    { title: 'Zelda', category: 'nintendo', description: 'Game', price: 100, pictureUrl: 'https://assets-prd.ignimgs.com/2022/06/14/zelda-breath-of-the-wild-1655249167687.jpg', stock: 'number' },
-    { title: 'Fifa 23', category: 'nintendo', description: 'Game', price: 100, pictureUrl: 'https://image.api.playstation.com/vulcan/ap/rnd/202207/0515/MkbqF5veMFZnmQRtsbmQoNZT.png', stock: 'number' },
-    { title: 'God of war', category: 'psn', description: 'Game', price: 100, pictureUrl: 'https://image.api.playstation.com/vulcan/img/rnd/202011/1021/X3WIAh63yKhRRiMohLoJMeQu.png', stock: 'number' }
+  { title: 'Fifa 23', category: 'nintendo', description: 'Videojuego de deportes', price: 100, pictureUrl: 'https://image.api.playstation.com/vulcan/ap/rnd/202207/0515/MkbqF5veMFZnmQRtsbmQoNZT.png', stock: 100 },
+  { title: 'Animal crossing', category: 'nintendo', description: 'simulación de vida', price: 100, pictureUrl: 'https://th.bing.com/th/id/OIP.SaqeTnqjgOzHuIfMcSx1KQHaHa?pid=ImgDet&rs=1', stock: 100 },
+  { title: 'God of war', category: 'psn', description: 'Acción-aventura', price: 100, pictureUrl: 'https://image.api.playstation.com/vulcan/img/rnd/202011/1021/X3WIAh63yKhRRiMohLoJMeQu.png', stock: 100 },
+  { title: 'The last of us', category: 'psn', description: 'Acción-aventura', price: 100, pictureUrl: 'https://image.api.playstation.com/vulcan/ap/rnd/202206/0720/eEczyEMDd2BLa3dtkGJVE9Id.png', stock: 100 },
+  { title: 'Halo infinite', category: 'xbox', description: 'Acción-aventura', price: 100, pictureUrl: 'https://th.bing.com/th/id/OIP.zzE0n-TzlslYrogiUiqRUQAAAA?pid=ImgDet&rs=1', stock: 100 },
+  { title: 'Red dead redemption 2', category: 'xbox', description: 'Acción-aventura western', price: 100, pictureUrl: 'https://assets.vg247.com/current/2018/05/red_dead_redemption_2_cover_art_1.jpg', stock: 100 },
+  { title: 'Elden ring', category: 'xbox', description: 'Souls-like', price: 100, pictureUrl: 'https://www.gameinformer.com/sites/default/files/styles/product_box_art/public/2021/06/11/ae21622c/eldenring.jpg', stock: 100 }
 ]
 
 export const createAllProducts = async () => {
-    try {
-        // obtenemos la basedatos
-        const database = getFirestore();
+  try {
+      // obtenemos la basedatos
+      const database = getFirestore();
 
-        // obtenemos la referencia a la collecion
-        const collectionReference = collection(database, 'items');
-        for (let i = 0; i < products.length; i++) {
-            const snapshot = await addDoc(collectionReference, products[i]);
-        }
-    } catch (error) {
-        console.warn(error)
-    }
+      // obtenemos la referencia a la collecion
+      const collectionReference = collection(database, 'items');
+      for (let i = 0; i < products.length; i++) {
+          const snapshot = await addDoc(collectionReference, products[i]);
+      }
+  } catch (error) {
+      console.warn(error)
+  }
 }
+
+
+

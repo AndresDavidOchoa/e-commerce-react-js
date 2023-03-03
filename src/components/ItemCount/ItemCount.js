@@ -23,16 +23,16 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     return (
         <div className='itemCountContainer'>
             <div>
-                <Button variant="danger" disabled={count <= 1} onClick={handleSubtract}>
+                <Button className='countButtons' disabled={count <= 1} onClick={handleSubtract}>
                     -
                 </Button>
-                <h5>{count}</h5>
-                <Button variant="success" disabled={count >= stock} onClick={handleAdd}>
+                <Button className='countButtons' disabled={count >= stock} onClick={handleAdd}>
                     +
                 </Button>
+                <h5>{count}</h5>
             </div>
             <div>
-                <Button variant="primary" disabled={stock <= 0} onClick={handleClick}>
+                <Button className='addToCartButton' disabled={stock <= 0} onClick={handleClick}>
                     Agregar al  Carrito
                 </Button>
             </div>

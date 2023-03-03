@@ -26,10 +26,9 @@ const ItemListContainer = ({ greeting }) => {
     }, [categoryId])
 
     return (
-        <Container className='shop-container'>
+        <Container className='shop-container' style={{backgroundColor: '#121212', paddingBottom: '20px' }}>
             <h3 className="greetings">{greeting}</h3>
             <ItemList products={products} />
-
         </Container>
     );
 }

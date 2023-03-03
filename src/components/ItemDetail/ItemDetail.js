@@ -1,13 +1,12 @@
 import { useContext, useState } from "react";
-import Item from "../ItemList/Item";
-import ItemCount from "../ItemCount/ItemCount"
-import './ItemDetail.css'
-import { Button } from "react-bootstrap";
+import ItemCount from "../ItemCount/ItemCount";
+import './ItemDetail.css';
+import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CartContext from "../../contexts/CartContext";
 
 const ItemDetail = ({ product }) => {
-    const { addItem } = useContext(CartContext); 
+    const { addItem } = useContext(CartContext);
     const [count, setCount] = useState(0);
     const [showItemCount, setShowItemCount] = useState(true);
 
@@ -19,7 +18,19 @@ const ItemDetail = ({ product }) => {
 
     return (
         <div className="ItemDetailContainer">
-            <Item product={product} />
+            <Card style={{ width: '18rem', backgroundColor: '#212529' }}>
+                <Card.Img variant="top" src={product.pictureUrl} />
+                <Card.Body style={{ color: 'white' }}>
+                    <Card.Title>{product.title}</Card.Title>
+                    <Card.Text>
+                        {product.description}
+                    </Card.Text>
+                    <Card.Text>
+                        CLP {product.price}
+                    </Card.Text>
+                </Card.Body>
+            </Card >
+
             {
                 showItemCount && (<ItemCount
                     initial={1}
@@ -31,7 +42,7 @@ const ItemDetail = ({ product }) => {
             {
                 !showItemCount && (
                     <Link to='/cart'>
-                        <Button variant="success">
+                        <Button className='goToCartButton'>
                             Ir al carrito
                         </Button>
                     </Link>

@@ -1,4 +1,28 @@
 .itemList {
-     margin-top: 64px;
+    margin-top: 16px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
+.card {
+    margin: 16px 10px 16px 10px;
+    background-color: black;
+    max-height: 430px;
+}
+
+.card-img-top{
+    max-height: 286.4px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+}
+
+.item-button-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+

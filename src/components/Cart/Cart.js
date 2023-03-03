@@ -4,8 +4,9 @@ import CartContext from "../../contexts/CartContext";
 import { BsFillTrashFill } from "react-icons/bs";
 import "./Cart.css";
 import { Link } from "react-router-dom";
-import OrderModal from "../OrderModal/OrderModal";
 import { createOrder } from "../../utils/orders";
+import OrderModal from "../OrderModal/OrderModal"
+
 
 const buyerMock = {
   name: 'coderhouse',
@@ -18,9 +19,6 @@ const Cart = () => {
   const [user, setUser] = useState(buyerMock);
   const [showModal, setShowModal] = useState(false);
   const [orderId, setOrderId] = useState();
-
-
-  console.log({ cart, total });
 
   const handleRemove = (itemId) => {
     removeItem(itemId);
@@ -41,53 +39,53 @@ const Cart = () => {
     clear();
   }
 
-    const showTable = cart.length > 0
+  const showTable = cart.length > 0
 
-    return (
-      <Container className='cartContainer'>
-        <h1>Carrito de Compras</h1>
-        {showTable && (
-          <>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Titulo</th>
-                  <th>Precio</th>
-                  <th>Cantidad</th>
-                  <th>Accion</th>
+  return (
+    <Container className='cartContainer'>
+      <h1>Carrito de Compras</h1>
+      {showTable && (
+        <>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Titulo</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.title}</td>
+                  <td>{item.price}</td>
+                  <td>{item.quantity}</td>
+                  <td><BsFillTrashFill onClick={() => handleRemove(item.id)} /></td>
                 </tr>
-              </thead>
-              <tbody>
-                {cart.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.title}</td>
-                    <td>{item.price}</td>
-                    <td>{item.quantity}</td>
-                    <td><BsFillTrashFill onClick={() => handleRemove(item.id)} /></td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-            <h3>Total: $ {total}</h3>
-            <Button variant="success" onClick={handleOpen}>Finalizar compra</Button>
-          </>
-        )}
-        {!showTable && (
-          <>
-            <h3>Carrito de compra vacio</h3>
-            <Link to='/'>
-              <Button variant="success">Ver productos</Button>
-            </Link>
-          </>
-        )}
-        <OrderModal
-          showModal={showModal}
-          onClose={handleClose}
-          onBuy={handleBuy}
-          orderId={orderId}
-        />
-      </Container>
-    );
-  }
+              ))}
+            </tbody>
+          </Table>
+          <h3>Total: CLP {total}</h3>
+          <Button className="buyButton" onClick={handleOpen}>Comprar</Button>
+        </>
+      )}
+      {!showTable && (
+        <>
+          <h3>Carrito de compra vacio</h3>
+          <Link to='/'>
+            <Button className="showProductsButton">Ver productos</Button>
+          </Link>
+        </>
+      )}
+      <OrderModal
+        showModal={showModal}
+        onClose={handleClose}
+        onBuy={handleBuy}
+        orderId={orderId}
+      />
+    </Container>
+  );
+}
 
-  export default Cart;
+export default Cart;
