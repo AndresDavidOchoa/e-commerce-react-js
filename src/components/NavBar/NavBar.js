@@ -21,7 +21,7 @@ const NavBar = () => {
                         <Nav.Link as={Link} to='/category/xbox'>
                             Xbox
                         </Nav.Link>
-                        <Nav.Link as={Link} to='/category/nosotros'>
+                        <Nav.Link as={Link} to='/nosotros'>
                             Nosotros
                         </Nav.Link>
                     </Nav>

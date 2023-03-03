@@ -1,0 +1,19 @@
+.container{
+    color: white;
+}
+
+.title{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.subtitle{
+    display: flex;
+    justify-content: center;
+}
+
+.sendFormButton{
+    margin: 0px 0px 10px 0px;
+}

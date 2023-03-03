@@ -1,4 +1,32 @@
-.cartContainer svg{
+.cartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    min-height: inherit;
+}
+
+.h1 {
+    justify-content: center;
+}
+
+.cartContainer,
+table,
+tbody,
+tr,
+td {
+    color: white !important;
+}
+
+.cartContainer svg {
     color: red;
     cursor: pointer;
+}
+
+.buyButton {
+    margin-bottom: 15px;
+}
+
+.showProductsButton {
+    margin: 20px;
 }
